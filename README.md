@@ -25,7 +25,9 @@ c.	A display of summary or statistics of data stored within the database and oth
 
 ## Bibliography
 [1] 	Griffiths, E. J.; Timme, R. E.; Page, A. J.; Alikhan, N.; Fornika, D.; Maguire, F.; Mendes, C. I.; Tausch, S. H.; Black, A.; Connor, T. R.; Tyson, G. H.; Aanensen, D. M.; Alcock, B.; Campos, J.; Christoffels, A.; Gonçalves da Silva, A.; Hodcroft, E.; Hsiao, W. W.; Katz, L. S.; Nicholls, S. M.; Oluniyi, P. E.; Olawoye, I. B.; Raphenya, A. R.; Vasconcelos, A. T. R.; Witney, A. A.; MacCannell, D. R.; The PHA4GE SARS-CoV-2 Contextual Data Specification for Open Genomic Epidemiology, Preprints, 2020. 
+
 [2] 	Tolar, B. ; Joseph, L. A.; Schroeder, M. N.; Stroika, S.; Ribot, E. M.; Hise, K. B.; Gerner-Smidt, P.; An Overview of PulseNet USA Databases, Foodborne Pathogens and Disease, vol. 16, no. 07, pp. 457-462, 2019. 
+
 [3] 	Uelze, L.; Grützke, J.; Borowiak, M.; Hammerl, J. A.; Juraschek, K.; Deneke, C.; Tausch, S. H.; & Malorny, B.; Typing methods based on whole genome sequencing data, One Health Outlook volume 2, vol. 3, 2020. 
 
 
