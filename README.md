@@ -30,6 +30,8 @@ c.	A display of summary or statistics of data stored within the database and oth
 
 [3] 	Uelze, L.; Grützke, J.; Borowiak, M.; Hammerl, J. A.; Juraschek, K.; Deneke, C.; Tausch, S. H.; & Malorny, B.; Typing methods based on whole genome sequencing data, One Health Outlook volume 2, vol. 3, 2020. 
 
+## Tutorials
+1. Learn Flask for Python - Full Tutorial (https://www.youtube.com/watch?v=Z1RJmh_OqeA)
 
 
 
