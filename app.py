@@ -44,28 +44,28 @@
 #     #app.run is the entry point for python
 import genomics_data_index.api as gdi
 
-from flask import Flask, render_template, url_for, request, redirect
+from flask import Flask, jsonify, render_template, url_for, request, redirect
 from flask_sqlalchemy import SQLAlchemy
-
-
 app = Flask(__name__) #referencing this file
-db = gdi.GenomicsDataIndex.connect('salmonella-project')
 
-@app.route('/', methods=['POST', 'GET']) #passing the url string of your route
+db = gdi.GenomicsDataIndex.connect('salmonella-project') #connecting to db
 
+@app.route('/') #passing the url string of your route
 #defining a function for that route
 def index():
+    return render_template("index.html")
+
+@app.route('/result.html', methods=['POST', 'GET']) #passing the url string of your route
+#defining a function for that route
+def query():
+
+    #post method
     if request.method == "POST":
         query_text = request.form['query'] #reading from the form
-
-        #querying our db
-        try:
-            return redirect("/")
-        except:
-            return "There was an issue adding your task :)"
-
+        return render_template("result.html", result = query_text)
+    #get method
     else:
-        return render_template('index.html')
+        return render_template("result.html", result =  query_text)
 
 if __name__ == "__main__":
     app.run(debug = True)
