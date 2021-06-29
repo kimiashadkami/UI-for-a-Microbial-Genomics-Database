@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<header>
+  <title>GenomixGo</title>
+</header>
+{% endblock %}
+
+{% block body %}
+  <div class="content">
+    <form action="{{url_for('query')}}" method="POST">
+      <input id="query" type="text" name="query">
+      <input type="submit" value="GO">
+    </form>
+    {#the text I recieve in query#}
+    <p id="text" name="text">{{result}}</p>
+  </div>
+
+{% endblock %}
