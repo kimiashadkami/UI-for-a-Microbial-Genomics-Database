@@ -7,31 +7,15 @@
 {% endblock %}
 
 {% block body %}
-  <div class="content">
-    {#<h1>Task Master</h1>
-    <table>
-      <tr>
-        <th>Task</th>
-        <th>Added</th>
-        <th>Actions</th>
-      </tr>
-      <tr>
-      {% for task in tasks %}
-        <td>{{task.content}}</td>
-        <td>{{task.date_created.date()}}</td>
-        <td>
-          <a href="#">Delete</a>
-          <a href="#">Update</a>
-        </td>
-      {% endfor %}
-      </tr>
-    </table>#}
-
-    {#<form action="/" method="POST">
-      <input id="content" type="text" name="content">
-      <input type="submit" value="Add Task">
-    </form>#}
-
+  <nav class="navbar navbar-fixed-top mynavbar">
+    <div class="container-fluid">
+      <a class="navbar-header a-navbar" href="#">
+        <img class="img-navbar" src="../static/img/logo.png" alt="GenomixGo logo">
+        GenomixGo
+      </a>
+    </div>
+  </nav>
+  <div class="container-fluid" style="margin-top:80px">
     <form action="{{url_for('query')}}" method="POST">
       <input id="query" type="text" name="query">
       <input type="submit" value="GO">
