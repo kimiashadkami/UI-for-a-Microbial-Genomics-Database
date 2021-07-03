@@ -1,4 +1,31 @@
 body{
-  margin: 0;
   font-family: sans-serif;
+}
+
+/*fonts*/
+@font-face {
+  font-family: 'Lato';
+  src: url(../fonts/Lato/Lato-Light.ttf);
+
+  font-family: 'WorkSans';
+  src: url(../fonts/Work_Sans/WorkSans-Light.ttf);
+}
+
+/*navbar*/
+.mynavbar{
+  background-color: #0277BD
+}
+.a-navbar{
+  color: #ffffff;
+  font-family: 'WorkSans';
+  font-size: 18px;
+}
+.a-navbar:hover{
+  text-decoration: none;
+  color: #ced4da;
+}
+
+.img-navbar{
+  width: 60px;
+  height: 60px;
 }
