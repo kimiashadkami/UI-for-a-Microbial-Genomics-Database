@@ -7,14 +7,27 @@
 {% endblock %}
 
 {% block body %}
-  <nav class="navbar navbar-fixed-top mynavbar">
-    <div class="container-fluid">
-      <a class="navbar-header a-navbar" href="#">
-        <img class="img-navbar" src="../static/img/logo.png" alt="GenomixGo logo">
-        GenomixGo
-      </a>
-    </div>
-  </nav>
+<nav class="mynavbar navbar navbar-fixed-top navbar-inverse">
+  <div class="container-fluid">
+    <img class="navbar-brand" src="../static/img/logo.png" alt="GenomixGo logo">
+    <a class="navbar-brand a-navbar" href="#">
+      GENOMIXGO
+    </a>
+    <ul class="ul-navbar nav navbar-nav navbar-right">
+      <li class="li-navbar">
+        <a class="a-navbar" href="#">HOME</a>
+      </li>
+      <li class="li-navbar">
+        <a class="a-navbar" href="#">ABOUT US</a>
+      </li>
+      <li class="li-navbar">
+        <a class="a-navbar" href="#">CONTACT US</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
   <div class="container-fluid" style="margin-top:80px">
     <form action="{{url_for('query')}}" method="POST">
       <input id="query" type="text" name="query">
