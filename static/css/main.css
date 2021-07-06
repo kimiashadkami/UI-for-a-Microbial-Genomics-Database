@@ -13,19 +13,33 @@ body{
 
 /*navbar*/
 .mynavbar{
-  background-color: #0277BD
+  background-color: #0277BD;
 }
+
 .a-navbar{
-  color: #ffffff;
   font-family: 'WorkSans';
   font-size: 18px;
 }
-.a-navbar:hover{
+
+.mynavbar .container-fluid .a-navbar{
+  color: #ffffff;
+}
+
+.mynavbar .container-fluid .a-navbar:hover{
+  text-decoration: none;
+  color: #ced4da;
+}
+
+.ul-navbar .li-navbar .a-navbar{
+  color: #ffffff;
+}
+
+.ul-navbar .li-navbar .a-navbar:hover{
   text-decoration: none;
   color: #ced4da;
 }
 
 .img-navbar{
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
 }
