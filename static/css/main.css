@@ -19,27 +19,19 @@ body{
 .a-navbar{
   font-family: 'WorkSans';
   font-size: 18px;
-}
-
-.mynavbar .container-fluid .a-navbar{
+  font-weight: 600;
   color: #ffffff;
-}
-
-.mynavbar .container-fluid .a-navbar:hover{
-  text-decoration: none;
-  color: #ced4da;
-}
-
-.ul-navbar .li-navbar .a-navbar{
-  color: #ffffff;
-}
-
-.ul-navbar .li-navbar .a-navbar:hover{
-  text-decoration: none;
-  color: #ced4da;
 }
 
 .img-navbar{
-  width: 80px;
-  height: 80px;
+  width: 50px;
+  height: 50px;
+}
+
+.mynavbar .button-nav{
+  border: 2px solid;
+}
+
+.mynavbar .button-nav:hover{
+  border: 2px solid #baddee;
 }
