@@ -7,21 +7,24 @@
 {% endblock %}
 
 {% block body %}
-<nav class="mynavbar navbar navbar-fixed-top navbar-inverse">
-  <div class="container-fluid">
-    <img class="navbar-brand" src="../static/img/logo.png" alt="GenomixGo logo">
-    <a class="navbar-brand a-navbar" href="#">
-      GENOMIXGO
-    </a>
-    <ul class="ul-navbar nav navbar-nav navbar-right">
-      <li class="li-navbar">
-        <a class="a-navbar" href="#">HOME</a>
+<nav class="mynavbar navbar navbar-expand-lg navbar-fixed-top navbar-dark">
+  <a class="navbar-brand a-navbar" href="#">
+    <img class="img-navbar d-none d-xl-inline d-lg-inline d-md-inline d-sm-none" src="../static/img/logo.png" alt="GenomixGo logo">
+    GENOMIXGO
+  </a>
+  <button class="button-nav navbar-toggler" type="button" data-toggle="collapse" data-target="#main_navbar" aria-controls="main_navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="main_navbar">
+    <ul class="ul-navbar navbar-nav ml-auto">
+      <li class="li-navbar nav-item active mr-3">
+        <a class="a-navbar nav-link" href="#">HOME</a>
       </li>
-      <li class="li-navbar">
-        <a class="a-navbar" href="#">ABOUT US</a>
+      <li class="li-navbar nav-item mr-3">
+        <a class="a-navbar nav-link" href="#">ABOUT US</a>
       </li>
-      <li class="li-navbar">
-        <a class="a-navbar" href="#">CONTACT US</a>
+      <li class="li-navbar nav-item mr-3">
+        <a class="a-navbar nav-link" href="#">CONTACT US</a>
       </li>
     </ul>
   </div>
