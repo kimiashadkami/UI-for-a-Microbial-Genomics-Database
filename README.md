@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # UI-for-a-Microbial-Genomics-Database
 A Web-based User Interface for a Microbial Genomics Database / Undergraduate Honours Project Supervised by Dr. Olivier Tremblay-Savard
 
@@ -69,7 +69,3 @@ c.	A display of summary or statistics of data stored within the database and oth
 
 ## Tutorials
 1. Learn Flask for Python - Full Tutorial (https://www.youtube.com/watch?v=Z1RJmh_OqeA)
-
-
-
->>>>>>> 4f77356649f214f2e1212a7e80902c272a5215be
