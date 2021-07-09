@@ -7,9 +7,10 @@
 {% endblock %}
 
 {% block body %}
-<nav class="mynavbar navbar navbar-expand-lg navbar-fixed-top navbar-dark">
+<!-- header -->
+<nav class="mynavbar navbar navbar-expand-lg sticky-top navbar-dark">
   <a class="navbar-brand a-navbar" href="#">
-    <img class="img-navbar d-none d-xl-inline d-lg-inline d-md-inline d-sm-none" src="../static/img/logo.png" alt="GenomixGo logo">
+    <img class="img-navbar d-none d-xl-inline d-lg-inline d-md-none d-sm-none" src="../static/img/logo.png" alt="GenomixGo logo">
     GENOMIXGO
   </a>
   <button class="button-nav navbar-toggler" type="button" data-toggle="collapse" data-target="#main_navbar" aria-controls="main_navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,13 +30,25 @@
     </ul>
   </div>
 </nav>
+<!-- header -->
 
+<!-- main container -->
+<div class="main-container container-fluid">
+  <form action="{{url_for('query')}}" method="POST">
+    <input id="query" type="text" name="query">
+    <input type="submit" value="GO">
+  </form>
+</div>
+<!-- main container -->
 
-  <div class="container-fluid" style="margin-top:80px">
-    <form action="{{url_for('query')}}" method="POST">
-      <input id="query" type="text" name="query">
-      <input type="submit" value="GO">
-    </form>
+<!-- footer -->
+<div class="myfooter container-fluid">
+  <div class="row">
+    <div class="col d-flex justify-content-center">
+      <p>Copy Right ©  2021 GenomixGo. All Rights Reserved</p>
+    </div>
   </div>
+</div>
+<!-- footer -->
 
 {% endblock %}
