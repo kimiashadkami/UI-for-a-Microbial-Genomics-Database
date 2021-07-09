@@ -35,3 +35,28 @@ body{
 .mynavbar .button-nav:hover{
   border: 2px solid #baddee;
 }
+
+/*main*/
+.main-container{
+  height: 90vh;
+}
+
+/*footer*/
+.myfooter{
+  height: 10vh;
+  background-color: #004C8C;
+}
+
+.myfooter .row .col p{
+  color: #ffffff;
+  font-family: Lato;
+  margin: auto;
+}
+
+.myfooter .row{
+  height: 100%;
+}
+
+.myfooter .row .col {
+  height: 100%;
+}
