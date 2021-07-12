@@ -34,10 +34,15 @@
 
 <!-- main container -->
 <div class="main-container container-fluid">
-  <form action="{{url_for('query')}}" method="POST">
-    <input id="query" type="text" name="query">
-    <input type="submit" value="GO">
-  </form>
+  <div class="row">
+    <div class="col-xl col-lg col-md col-sm col-xs form-col">
+      <form class="myform" action="{{url_for('query')}}" method="POST">
+        <legend class="mylegend">Hello Brilliant Mind!</legend>
+        <input id="query" type="text" name="query">
+        <input type="submit" value="GO">
+      </form>
+    </div>
+  </div>
 </div>
 <!-- main container -->
 
