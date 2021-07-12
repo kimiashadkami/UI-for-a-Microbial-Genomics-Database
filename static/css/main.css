@@ -41,6 +41,19 @@ body{
   height: 90vh;
 }
 
+.main-container .row{
+  height: 90vh;
+}
+.main-container .row .form-col{
+  margin-top: auto;
+  margin-bottom: auto;
+  display: flex;
+  justify-content: center;
+}
+.mylegend{
+  font-family: WorkSans;
+  font-size: 64px;
+}
 /*footer*/
 .myfooter{
   height: 10vh;
@@ -50,6 +63,7 @@ body{
 .myfooter .row .col p{
   color: #ffffff;
   font-family: Lato;
+  font-size: 18;
   margin: auto;
 }
 
