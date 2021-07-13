@@ -1,0 +1,36 @@
+/*main*/
+.main-container{
+  min-height: 90vh;
+}
+
+.main-container .form-row{
+  min-height: 90vh;
+}
+
+.main-container .form-row .form-col{
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.mylegend{
+  font-family: WorkSans;
+  font-size: 64px;
+  font-weight: 500;
+}
+
+.query-input{
+  background-color: #E5E5E5;
+  border: none;
+  height: 60px;
+  font-family: WorkSans;
+  font-size: 28px;
+}
+
+.query-btn{
+  font-family: WorkSans;
+  font-size: 28px;
+  background-color: #4CAF50;
+  height: 60px;
+}
