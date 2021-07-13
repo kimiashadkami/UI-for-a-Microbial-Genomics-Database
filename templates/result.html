@@ -1,19 +1,26 @@
 {% extends 'base.html' %}
 
 {% block head %}
-<header>
-  <title>GenomixGo</title>
-</header>
+<link rel = "stylesheet" href = "{{ url_for('static', filename = 'css/result.css') }}">
 {% endblock %}
 
-{% block body %}
-  <div class="content">
-    <form action="{{url_for('query')}}" method="POST">
-      <input id="query" type="text" name="query">
-      <input type="submit" value="GO">
-    </form>
-    {#the text I recieve in query#}
-    <p id="text" name="text">{{result}}</p>
+{% block main %}
+<!-- start main container -->
+<div class="main-container container-fluid">
+  <div class="form-row">
+    <div class="col-xl col-lg col-md col-sm col-xs form-col">
+      <form class="form-inline" action="{{url_for('query')}}" method="POST">
+        <legend class="mylegend">Hello Brilliant Mind!</legend>
+        <div class="form-group mr-2">
+          <input id="query" type="text" name="query" class="form-control
+          query-input" placeholder="type in your query..." required>
+        </div>
+        <div class="form-group form-group-btn">
+          <input type="submit" value="GO" class="btn btn-success query-btn">
+        </div>
+      </form>
+    </div>
   </div>
-
+</div>
+<!-- end main container -->
 {% endblock %}
