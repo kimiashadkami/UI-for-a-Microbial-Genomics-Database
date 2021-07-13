@@ -1,38 +1,11 @@
 {% extends 'base.html' %}
 
 {% block head %}
-<header>
-  <title>GenomixGo</title>
-</header>
+<link rel = "stylesheet" href = "{{ url_for('static', filename = 'css/index.css') }}">
 {% endblock %}
 
-{% block body %}
-<!-- header -->
-<nav class="mynavbar navbar navbar-expand-lg sticky-top navbar-dark">
-  <a class="navbar-brand a-navbar" href="#">
-    <img class="img-navbar d-none d-xl-inline d-lg-inline d-md-none d-sm-none" src="../static/img/logo.png" alt="GenomixGo logo">
-    GENOMIXGO
-  </a>
-  <button class="button-nav navbar-toggler" type="button" data-toggle="collapse" data-target="#main_navbar" aria-controls="main_navbar" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="main_navbar">
-    <ul class="ul-navbar navbar-nav ml-auto">
-      <li class="li-navbar nav-item active mr-3">
-        <a class="a-navbar nav-link" href="#">HOME</a>
-      </li>
-      <li class="li-navbar nav-item mr-3">
-        <a class="a-navbar nav-link" href="#">ABOUT US</a>
-      </li>
-      <li class="li-navbar nav-item mr-3">
-        <a class="a-navbar nav-link" href="#">CONTACT US</a>
-      </li>
-    </ul>
-  </div>
-</nav>
-<!-- header -->
-
-<!-- main container -->
+{% block main %}
+<!-- start main container -->
 <div class="main-container container-fluid">
   <div class="form-row">
     <div class="col-xl col-lg col-md col-sm col-xs form-col">
@@ -40,7 +13,7 @@
         <legend class="mylegend">Hello Brilliant Mind!</legend>
         <div class="form-group mr-2">
           <input id="query" type="text" name="query" class="form-control
-          query-input" placeholder="type in your query...">
+          query-input" placeholder="type in your query..." required>
         </div>
         <div class="form-group form-group-btn">
           <input type="submit" value="GO" class="btn btn-success query-btn">
@@ -49,16 +22,6 @@
     </div>
   </div>
 </div>
-<!-- main container -->
-
-<!-- footer -->
-<div class="myfooter container-fluid">
-  <div class="row">
-    <div class="col d-flex justify-content-center">
-      <p>Copy Right ©  2021 GenomixGo. All Rights Reserved</p>
-    </div>
-  </div>
-</div>
-<!-- footer -->
+<!-- end main container -->
 
 {% endblock %}
