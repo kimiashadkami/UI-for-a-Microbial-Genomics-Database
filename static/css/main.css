@@ -38,39 +38,62 @@ body{
 
 /*main*/
 .main-container{
-  height: 90vh;
+  min-height: 90vh;
 }
 
-.main-container .row{
-  height: 90vh;
+.main-container .form-row{
+  min-height: 90vh;
 }
-.main-container .row .form-col{
+
+.main-container .form-row .form-col{
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.mylegend{
+  font-family: WorkSans;
+  font-size: 64px;
+  font-weight: 500;
+}
+
+.query-input{
+  background-color: #E5E5E5;
+  border: none;
+  height: 60px;
+  font-family: WorkSans;
+  font-size: 28px;
+}
+
+.query-btn{
+  font-family: WorkSans;
+  font-size: 28px;
+  background-color: #4CAF50;
+  height: 60px;
+}
+
+/*footer*/
+.myfooter{
+  min-height: 10vh;
+  background-color: #004C8C;
+}
+
+.myfooter .row{
+  height: 100%;
+  min-height: 10vh;
+}
+
+.myfooter .row .col {
+  height: 100%;
   margin-top: auto;
   margin-bottom: auto;
   display: flex;
   justify-content: center;
-}
-.mylegend{
-  font-family: WorkSans;
-  font-size: 64px;
-}
-/*footer*/
-.myfooter{
-  height: 10vh;
-  background-color: #004C8C;
 }
 
 .myfooter .row .col p{
   color: #ffffff;
   font-family: Lato;
   font-size: 18;
-  margin: auto;
-}
-
-.myfooter .row{
-  height: 100%;
-}
-
-.myfooter .row .col {
-  height: 100%;
 }
