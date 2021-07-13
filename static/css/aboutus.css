@@ -1,0 +1,15 @@
+/*main*/
+.main-container{
+  min-height: 90vh;
+}
+
+.main-container .row{
+  min-height: 90vh;
+}
+
+.main-container .row .col{
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+  margin-bottom: auto;
+}
