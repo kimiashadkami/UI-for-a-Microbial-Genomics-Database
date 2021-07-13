@@ -6,13 +6,23 @@ app = Flask(__name__) #referencing this file
 
 db = gdi.GenomicsDataIndex.connect('salmonella-project') #connecting to db
 
-@app.route('/') #passing the url string of your route
-#defining a function for that route
+@app.route('/aboutus.html')
+def aboutus():
+    return render_template("aboutus.html")
+
+@app.route('/contactus.html')
+def contactus():
+    return render_template("contactus.html")
+
+@app.route('/index.html')
+def home():
+    return render_template("index.html")
+
+@app.route('/')
 def index():
     return render_template("index.html")
 
-@app.route('/result.html', methods=['POST', 'GET']) #passing the url string of your route
-#defining a function for that route
+@app.route('/result.html', methods=['POST', 'GET'])
 def query():
 
     #post method
@@ -23,6 +33,7 @@ def query():
     #get method
     else:
         return render_template("result.html", result =  query_text)
+
 
 if __name__ == "__main__":
     app.run(debug = True)
