@@ -1,15 +1,35 @@
+@font-face {
+  font-family: 'Lato';
+  src: url(../fonts/Lato/Lato-Light.ttf);
+
+  font-family: 'WorkSans';
+  src: url(../fonts/Work_Sans/WorkSans-Light.ttf);
+}
+
 /*main*/
 .main-container{
   min-height: 90vh;
 }
 
-.main-container .row{
-  min-height: 90vh;
+.about-txt-row{
+
 }
 
-.main-container .row .col{
+.main-container .about-txt-row .col .h1-aboutus{
+  font-family: WorkSans;
+  font-size: 48px;
+}
+
+.main-container .row{
   display: flex;
-  justify-content: center;
-  margin-top: auto;
-  margin-bottom: auto;
+  justify-content: right;
+}
+
+.main-container .row .card{
+  min-width: 100%;
+}
+
+.card-img{
+  max-width: 100%;
+  max-height: 100%;
 }
