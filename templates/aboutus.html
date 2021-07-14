@@ -1,16 +1,75 @@
 {% extends 'base.html' %}
 
 {% block head %}
-<link rel = "stylesheet" href = "{{ url_for('static', filename = 'css/aboutus.css') }}">
+<link rel = "stylesheet" href =
+"{{ url_for('static', filename = 'css/aboutus.css') }}">
 {% endblock %}
 
 {% block main %}
 <!-- start main container -->
 <div class="main-container container-fluid">
-  <div class="row">
-    <div class="col-xl col-lg col-md col-sm col-xs">
+  <!-- about text -->
+  <div class="row ml-1 mr-3 mb-3 about-txt-row">
+    <div class="col mt-5">
+      <h1 class="h1-aboutus">Say Hello to GENOMIXGO</h1>
     </div>
   </div>
+  <!-- start card 1 -->
+  <div class="row ml-3 mr-3 mb-3">
+    <div class="card mt-3">
+      <div class="row no-gutters">
+        <div class="col-md-2">
+          <img class="card-img img-fluid" src="../static/img/Aaron Petkau.jpg"
+           alt="Aron Petkau">
+        </div>
+        <div class="col-md-10">
+          <div class="card-body">
+            <h5 class="card-title">Aaron Petkau</h5>
+            <p class="card-text">Bioinformatician <br> Graduate Student with the
+               Public Health Agency of Canada and University of Manitoba.
+               <br> Working on microbial genomics for public health.</p>
+            <p class="card-text">
+              <small class="text-muted">
+                <a href="https://github.com/apetkau" alt="github">Github</a>
+              </small>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end card 1 -->
+  <!-- start card 2 -->
+  <div class="row ml-3 mr-3 mb-3">
+    <div class="card mt-1">
+      <div class="row no-gutters">
+        <div class="col-md-2">
+          <img class="img-fuild card-img"
+          src="../static/img/Kimia Shadkami.jpg" alt="Kimia Shadkami">
+        </div>
+        <div class="col-md-10">
+          <div class="card-body">
+            <h5 class="card-title">Kimia Shadkami</h5>
+            <p class="card-text">Front-end Developer <br>
+              Communications Assistant
+              at the Faculty of Science, University of Manitoba
+              <br> Master's Student in Computer Science at the
+               University of Manitoba
+            </p>
+            <p class="card-text">
+              <small class="text-muted">
+                <a href="https://github.com/kimiashadkami" alt="github">
+                  Github</a>
+                <a href="https://www.linkedin.com/in/kimiashadkami/"
+                alt="linkedin">LinkedIn</a>
+              </small>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end card 2 -->
 </div>
 <!-- end main container -->
 {% endblock %}
