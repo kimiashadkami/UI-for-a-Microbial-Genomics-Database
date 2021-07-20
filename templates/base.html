@@ -35,13 +35,13 @@
       </button>
       <div class="collapse navbar-collapse" id="main_navbar">
         <ul class="ul-navbar navbar-nav ml-auto">
-          <li class="li-navbar nav-item active mr-3">
+          <li class="li-navbar nav-item mr-3 {{'active' if active_page == 'index'}}">
             <a class="a-navbar nav-link" href="{{ url_for('home') }}">HOME</a>
           </li>
-          <li class="li-navbar nav-item mr-3">
+          <li class="li-navbar nav-item mr-3 {{'active' if active_page == 'aboutus'}}">
             <a class="a-navbar nav-link" href="{{ url_for('aboutus') }}">ABOUT US</a>
           </li>
-          <li class="li-navbar nav-item mr-3">
+          <li class="li-navbar nav-item mr-3 {{'active' if active_page == 'contactus'}}">
             <a class="a-navbar nav-link" href="{{ url_for('contactus') }}">CONTACT US</a>
           </li>
         </ul>
