@@ -11,10 +11,6 @@
   min-height: 90vh;
 }
 
-.about-txt-row{
-
-}
-
 .main-container .about-txt-row .col .h1-aboutus{
   font-family: WorkSans;
   font-size: 48px;
@@ -32,4 +28,14 @@
 .card-img{
   max-width: 100%;
   max-height: 100%;
+}
+
+.row .card .col-md-10 .card-body .card-text{
+  font-style: WorkSans;
+  font-size: 16px;
+}
+
+.card-title{
+  font-style: WorkSans;
+  font-size: 18px;
 }
