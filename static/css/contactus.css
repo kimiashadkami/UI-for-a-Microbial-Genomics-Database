@@ -1,15 +1,33 @@
 /*main*/
-.main-container{
-  min-height: 90vh;
+@font-face {
+  font-family: 'Lato';
+  src: url(../fonts/Lato/Lato-Light.ttf);
+
+  font-family: 'WorkSans';
+  src: url(../fonts/Work_Sans/WorkSans-Light.ttf);
 }
 
-.main-container .row{
+.main-container{
   min-height: 90vh;
 }
 
 .main-container .row .col{
   display: flex;
-  justify-content: center;
+  justify-content: left;
   margin-top: auto;
   margin-bottom: auto;
+}
+
+.main-container .row .col .contactus-txt{
+  display: flex;
+  justify-content: left;
+  font-family: Lato;
+  font-size: 18px;
+}
+
+.main-container .row:first-child .contactus-txt{
+  color: #ffffff;
+  background-color: #81bbde;
+  font-family: WorkSans;
+  font-size: 36px;
 }
