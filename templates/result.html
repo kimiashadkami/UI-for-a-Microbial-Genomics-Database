@@ -8,10 +8,11 @@
 {% block main %}
 <!-- start main container -->
 <div class="main-container container-fluid">
+  <!-- start form -->
   <div class="form-row">
     <div class="col-xl col-lg col-md col-sm col-xs form-col">
       <form class="form-inline" action="{{url_for('query')}}" method="POST">
-        <legend class="mylegend">Hello Brilliant Mind!</legend>
+        <legend class="mylegend">Do another search!</legend>
         <div class="form-group mr-2">
           <input id="query" type="text" name="query" class="form-control
           query-input" placeholder="type in your query..." required>
@@ -22,6 +23,18 @@
       </form>
     </div>
   </div>
+  <!-- end form -->
+  <div class="row">
+    <div class="col-xl col-lg col-md col-sm col-xs">
+      <div class="test"></div>
+    </div>
+  </div>
 </div>
 <!-- end main container -->
+{% endblock %}
+
+{% block jslinks %}
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script type="text/javascript" src= "{{
+  url_for('static', filename='js/vis.js')}}"></script>
 {% endblock %}
