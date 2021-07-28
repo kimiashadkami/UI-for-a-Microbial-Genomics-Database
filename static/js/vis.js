@@ -9,9 +9,13 @@ const DUMMY_DATA = [
   {id: 'd1', value: 25, name: 'F'},
   {id: 'd1', value: 35, name: 'G'},
 ]
-d3.selectAll('.test')
-  .selectAll('p')
-  .data(DUMMY_DATA)
-  .enter()
-  .append('p')
-  .text(data_point => data_point.value);
+
+const bars = d3.select('.test')
+               .selectAll('.bar')
+               .data(DUMMY_DATA)
+               .enter()
+               .append('div')
+               .classed('bar', true)
+               .style('width', '50px')
+               .style('height', data_point => data_point.value + 'px')
+               .style('margin-left', '5px');
