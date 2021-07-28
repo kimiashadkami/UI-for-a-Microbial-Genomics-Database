@@ -4,17 +4,24 @@
 }
 
 .main-container .form-row{
-  min-height: 90vh;
+  min-height: 30vh;
 }
 
 .main-container .form-row .form-col{
   display: flex;
-  justify-content: left;
+  justify-content: center;
   margin-top: auto;
   margin-bottom: auto;
 }
 
+.main-container .form-row .form-col .form-inline{
+  display: flex;
+  justify-content: center;
+}
+
 .mylegend{
+  display: flex;
+  justify-content: center;
   font-family: WorkSans;
   font-size: 28px;
 }
@@ -22,7 +29,6 @@
 .query-input{
   background-color: #E5E5E5;
   border: none;
-  height: 40px;
   font-family: WorkSans;
   font-size: 20px;
 }
@@ -31,5 +37,25 @@
   font-family: WorkSans;
   font-size: 20px;
   background-color: #4CAF50;
-  height: 40px;
+}
+
+.vis-row{
+  min-height: 10vh;
+}
+
+.vis-col{
+  min-height: 10vh;
+}
+
+.test{
+  min-height: 10vh;
+  display: flex;
+  justify-content: center;
+}
+
+.bar{
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  padding-left: 1px;
 }
