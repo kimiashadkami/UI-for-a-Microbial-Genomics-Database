@@ -52,15 +52,3 @@
   display: flex;
   justify-content: center;
 }
-
-.test{
-  min-height: 80vh;
-  display: flex;
-  justify-content: center;
-}
-
-.bar{
-  fill: red;
-  display: block;
-  margin-left: 5;
-}
