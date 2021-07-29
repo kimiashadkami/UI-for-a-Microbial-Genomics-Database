@@ -41,21 +41,26 @@
 
 .vis-row{
   min-height: 10vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .vis-col{
-  min-height: 10vh;
-}
-
-.test{
+  width: 100%;
   min-height: 10vh;
   display: flex;
   justify-content: center;
 }
 
+.test{
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+}
+
 .bar{
-  width: 10px;
-  height: 10px;
-  background-color: red;
-  padding-left: 1px;
+  fill: red;
+  display: block;
+  margin-left: 5;
 }
