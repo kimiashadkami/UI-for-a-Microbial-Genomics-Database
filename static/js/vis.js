@@ -22,40 +22,55 @@ const margin = {top: 100, bottom: 100, left: 100, right: 100}
 const svg = d3.select('#d3-container')
               .append('svg')
               .attr('width', width - margin.left - margin.right)
-              .attr('heigh', height - margin.top - margin.bottom)
+              .attr('height', height - margin.top - margin.bottom)
               .attr('viewBox', [0, 0, width, height]);
 
-const x_scale = d3.scaleBand()
+const x_scale = d3.scaleLinear()
+                  .domain([0,40])
+                  .range([margin.left, width - margin.right])
+                  /*d3.scaleBand()
                   .domain(d3.range(DUMMY_DATA.length))
                   .range([margin.left, width - margin.right])
-                  .padding(0.1);
+                  .padding(0.1);*/
 
-const y_scale = d3.scaleLinear()
+const y_scale = d3.scaleBand()
+                  .domain(d3.range(DUMMY_DATA.length))
+                  .range([height - margin.bottom, margin.top])
+                  .padding(0.1)
+                /*d3.scaleLinear()
                   .domain([0,40])
                   .range([height - margin.bottom, margin.top]);
+                  */
 
 //creating the bar chart
+//.attr('x', (d, i) => x_scale(i))
+//.attr('y', (d) => y_scale(d.value))
+//.attr('width', x_scale.bandwidth())
+//.attr('height', d => y_scale(0) - y_scale(d.value));
+//width - margin.right
 svg
   .append('g')
   .attr('fill', 'royalblue')
   .selectAll('rect')
   .data(DUMMY_DATA)
   .join('rect')
-    .attr('x', (d, i) => x_scale(i))
-    .attr('y', (d) => y_scale(d.value))
-    .attr('width', x_scale.bandwidth())
-    .attr('height', d => y_scale(0) - y_scale(d.value));
+    .attr('x', margin.left)
+    .attr('y', (d, i) => y_scale(i))
+    .attr('width', d => x_scale(d.value) - margin.left)
+    .attr('height', y_scale.bandwidth());
 
 //the x axis labels
+//g.attr('transform', `translate(0, ${height - margin.bottom})`)
+//.call(d3.axisBottom(x_scale).tickFormat(i => DUMMY_DATA[i].name))
 function xAxis(g){
   g.attr('transform', `translate(0, ${height - margin.bottom})`)
-  .call(d3.axisBottom(x_scale).tickFormat(i => DUMMY_DATA[i].name))
+  .call(d3.axisBottom(x_scale).ticks(null, DUMMY_DATA.format))
   .attr('font-size', '20px')
 }
 
 function yAxis(g){
   g.attr('transform', `translate(${margin.left}, 0)`)
-  .call(d3.axisLeft(y_scale).ticks(null, DUMMY_DATA.format))
+  .call(d3.axisLeft(y_scale).tickFormat(i => DUMMY_DATA[i].name))
   .attr('font-size', '20px')
 }
 
