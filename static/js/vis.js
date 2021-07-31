@@ -28,26 +28,13 @@ const svg = d3.select('#d3-container')
 const x_scale = d3.scaleLinear()
                   .domain([0,40])
                   .range([margin.left, width - margin.right])
-                  /*d3.scaleBand()
-                  .domain(d3.range(DUMMY_DATA.length))
-                  .range([margin.left, width - margin.right])
-                  .padding(0.1);*/
 
 const y_scale = d3.scaleBand()
                   .domain(d3.range(DUMMY_DATA.length))
                   .range([height - margin.bottom, margin.top])
                   .padding(0.1)
-                /*d3.scaleLinear()
-                  .domain([0,40])
-                  .range([height - margin.bottom, margin.top]);
-                  */
 
 //creating the bar chart
-//.attr('x', (d, i) => x_scale(i))
-//.attr('y', (d) => y_scale(d.value))
-//.attr('width', x_scale.bandwidth())
-//.attr('height', d => y_scale(0) - y_scale(d.value));
-//width - margin.right
 svg
   .append('g')
   .attr('fill', 'royalblue')
@@ -57,11 +44,10 @@ svg
     .attr('x', margin.left)
     .attr('y', (d, i) => y_scale(i))
     .attr('width', d => x_scale(d.value) - margin.left)
-    .attr('height', y_scale.bandwidth());
+    .attr('height', y_scale.bandwidth())
+    .attr
 
 //the x axis labels
-//g.attr('transform', `translate(0, ${height - margin.bottom})`)
-//.call(d3.axisBottom(x_scale).tickFormat(i => DUMMY_DATA[i].name))
 function xAxis(g){
   g.attr('transform', `translate(0, ${height - margin.bottom})`)
   .call(d3.axisBottom(x_scale).ticks(null, DUMMY_DATA.format))
