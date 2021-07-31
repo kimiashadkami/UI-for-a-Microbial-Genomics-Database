@@ -16,7 +16,7 @@ const DUMMY_DATA = [
 ]
 
 const width = 500;
-const height = 500;
+const height = 1000;
 const margin = {top: 100, bottom: 100, left: 100, right: 100}
 
 const svg = d3.select('#d3-container')
