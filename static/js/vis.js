@@ -48,7 +48,8 @@ svg
     .attr('class', 'rectangle')
     .attr('data-toggle', 'tooltip')
     .attr('data-placement','right')
-    .attr('title', (d, i) => DUMMY_DATA[i].value);
+    .attr('title', (d, i) => DUMMY_DATA[i].value)
+    
 
 //the x axis labels
 function xAxis(g){
