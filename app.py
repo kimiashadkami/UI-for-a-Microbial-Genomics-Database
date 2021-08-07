@@ -40,8 +40,20 @@ def query():
                 query = query.hasa(substring)
         query.tolist()
 
+        from genomics_data_index.api.query.SamplesQuery import SamplesQuery
 
-        return render_template("result.html", result = query.tolist())
+        def query_to_plot_json(query: SamplesQuery) -> str:
+            summary_df = query.summary_features()
+            plot_df = summary_df.reset_index()[['Mutation', 'Count']].rename({
+                'Mutation': 'name',
+                'Count': 'value'
+            }, axis='columns')
+            plot_df['id'] = plot_df['name']
+            plot_json = plot_df.to_json(orient='records')
+            # plot_json contains the data as a JSON string
+            return plot_json
+
+        return render_template("result.html", result = query_to_plot_json(query))
     #get method
     else:
         return render_template("result.html", result =  query.tolist())
