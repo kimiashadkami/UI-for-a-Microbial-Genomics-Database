@@ -4,7 +4,9 @@ from flask import Flask, jsonify, render_template, url_for, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__) #referencing this file
 
-db = gdi.GenomicsDataIndex.connect('salmonella-project') #connecting to db
+@app.route('/')
+def index():
+    return render_template("index.html")
 
 @app.route('/aboutus.html')
 def aboutus():
@@ -18,21 +20,31 @@ def contactus():
 def home():
     return render_template("index.html")
 
-@app.route('/')
-def index():
-    return render_template("index.html")
-
 @app.route('/result.html', methods=['POST', 'GET'])
 def query():
 
+    db = gdi.GenomicsDataIndex.connect('salmonella-project') #connecting to db
     #post method
     if request.method == "POST":
         query_text = request.form['query'] #reading from the form
+        #hasa:gi|194447306|ref|NC_011083.1|:63393:C:A hasa:gi|194447306|ref|NC_011083.1|:4876176:A:G
+        query = db.samples_query()
+        query_string = query_text
+        query_string_components = query_string.split(' ')
+        for query_string in query_string_components:
+            if query_string.startswith('isa:'):
+                substring = query_string[len('isa:'):]
+                query = query.isa(substring)
+            elif query_string.startswith('hasa:'):
+                substring = query_string[len('hasa:'):]
+                query = query.hasa(substring)
+        query.tolist()
 
-        return render_template("result.html", result = query_text)
+
+        return render_template("result.html", result = query.tolist())
     #get method
     else:
-        return render_template("result.html", result =  query_text)
+        return render_template("result.html", result =  query.tolist())
 
 
 if __name__ == "__main__":
