@@ -2,6 +2,7 @@ import genomics_data_index.api as gdi
 import json
 from flask import Flask, jsonify, render_template, url_for, request, redirect
 from flask_sqlalchemy import SQLAlchemy
+from genomics_data_index.api.query.SamplesQuery import SamplesQuery
 app = Flask(__name__) #referencing this file
 
 json_result = ""
@@ -24,13 +25,23 @@ def home():
 
 @app.route('/result.html', methods=['POST', 'GET'])
 def query():
-
-    db = gdi.GenomicsDataIndex.connect('salmonella-project') #connecting to db
-    #post method
     if request.method == "POST":
+        #query_string = request.form['query']
+        query_string = ""
+        return render_template("result.html", query_str = query_string)
+    else:
+        query_string = ""
+        return render_template("result.html", query_str = query_string)
+
+@app.route('/get-data', methods=['POST', 'GET'])
+def returnJSONResult():
+    db = gdi.GenomicsDataIndex.connect('salmonella-project') #connecting to db
+    if request.method == "GET":
+        print("hi")
         #hasa:gi|194447306|ref|NC_011083.1|:63393:C:A hasa:gi|194447306|ref|NC_011083.1|:4876176:A:G
         query = db.samples_query()
-        query_string = request.form['query'] #reading from the form
+        #query_string = request.form['query']
+        query_string = ""
         query_string_components = query_string.split(' ')
         for query_string in query_string_components:
             if query_string.startswith('isa:'):
@@ -39,9 +50,6 @@ def query():
             elif query_string.startswith('hasa:'):
                 substring = query_string[len('hasa:'):]
                 query = query.hasa(substring)
-        query.tolist()
-
-        from genomics_data_index.api.query.SamplesQuery import SamplesQuery
 
         def query_to_plot_json(query: SamplesQuery) -> str:
             summary_df = query.summary_features()
@@ -50,22 +58,10 @@ def query():
                 'Count': 'value'
             }, axis='columns')
             plot_df['id'] = plot_df['name']
-            #plot_json = plot_df.to_dict(orient='records')
-            plot_json = json.dumps(plot_df.to_dict(orient='records'))
-            # plot_json contains the data as a JSON string
+            plot_json = jsonify(plot_df.to_dict(orient='records'))
             return plot_json
 
-        json_result = query_to_plot_json(query)
-
-        return render_template("result.html", result = json_result)
-    #get method
-    else:
-        return render_template("result.html", result =  json_result)
-
-@app.route('/get-data', methods=['POST', 'GET'])
-
-def returnJSONResult():
-    return json_result
+        return query_to_plot_json(query)
 
 if __name__ == "__main__":
     app.run(debug = True)
