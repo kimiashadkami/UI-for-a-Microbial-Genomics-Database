@@ -26,22 +26,19 @@ def home():
 @app.route('/result.html', methods=['POST', 'GET'])
 def query():
     if request.method == "POST":
-        #query_string = request.form['query']
-        query_string = ""
+        query_string = request.form['query']
         return render_template("result.html", query_str = query_string)
     else:
-        query_string = ""
+        query_string = request.form['query']
         return render_template("result.html", query_str = query_string)
 
 @app.route('/get-data', methods=['POST', 'GET'])
 def returnJSONResult():
     db = gdi.GenomicsDataIndex.connect('salmonella-project') #connecting to db
     if request.method == "GET":
-        print("hi")
         #hasa:gi|194447306|ref|NC_011083.1|:63393:C:A hasa:gi|194447306|ref|NC_011083.1|:4876176:A:G
         query = db.samples_query()
-        #query_string = request.form['query']
-        query_string = ""
+        query_string = request.args.get('query_str')
         query_string_components = query_string.split(' ')
         for query_string in query_string_components:
             if query_string.startswith('isa:'):
