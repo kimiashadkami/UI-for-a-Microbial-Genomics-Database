@@ -1,8 +1,10 @@
 import genomics_data_index.api as gdi
-
+import json
 from flask import Flask, jsonify, render_template, url_for, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__) #referencing this file
+
+json_result = ""
 
 @app.route('/')
 def index():
@@ -26,10 +28,9 @@ def query():
     db = gdi.GenomicsDataIndex.connect('salmonella-project') #connecting to db
     #post method
     if request.method == "POST":
-        query_text = request.form['query'] #reading from the form
         #hasa:gi|194447306|ref|NC_011083.1|:63393:C:A hasa:gi|194447306|ref|NC_011083.1|:4876176:A:G
         query = db.samples_query()
-        query_string = query_text
+        query_string = request.form['query'] #reading from the form
         query_string_components = query_string.split(' ')
         for query_string in query_string_components:
             if query_string.startswith('isa:'):
@@ -49,15 +50,22 @@ def query():
                 'Count': 'value'
             }, axis='columns')
             plot_df['id'] = plot_df['name']
-            plot_json = plot_df.to_json(orient='records')
+            #plot_json = plot_df.to_dict(orient='records')
+            plot_json = json.dumps(plot_df.to_dict(orient='records'))
             # plot_json contains the data as a JSON string
             return plot_json
 
-        return render_template("result.html", result = query_to_plot_json(query))
+        json_result = query_to_plot_json(query)
+
+        return render_template("result.html", result = json_result)
     #get method
     else:
-        return render_template("result.html", result =  query.tolist())
+        return render_template("result.html", result =  json_result)
 
+@app.route('/get-data', methods=['POST', 'GET'])
+
+def returnJSONResult():
+    return json_result
 
 if __name__ == "__main__":
     app.run(debug = True)

@@ -1,5 +1,10 @@
 console.log(d3);
 
+d3.json('/get-data', function(error, root){
+  console.log("1");
+  console.log(root);
+});
+
 const DUMMY_DATA = [
   {id: 'd1', name: 'A', value: 10},
   {id: 'd2', name: 'B', value: 30},
