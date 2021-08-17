@@ -1,17 +1,17 @@
 console.log(d3);
 
-function visualize(data){
-  console.log(data);
+function visualize_data(vis_data, num){
 
-  const VIS_DATA_ALL = data;
+  var d;
 
-  VIS_DATA_ALL.sort(
-    function(g1, g2) {
-      return (g2['value']) - (g1['value']);
-    }
-  );
+  if(num>0){
+    d = vis_data.slice(0,num);
+  }
+  else{
+    d = vis_data;
+  }
 
-  const VIS_DATA = VIS_DATA_ALL.slice(0,20);
+  const VIS_DATA = d;
 
   const width = 500;
   const height = VIS_DATA.length*25;
@@ -71,6 +71,25 @@ function visualize(data){
   svg.append('g').call(yAxis);
   svg.append('g').call(xAxis);
   svg.node();
+}
+
+function visualize(data){
+
+  console.log(data);
+
+  const VIS_DATA_ALL = data;
+
+  VIS_DATA_ALL.sort(
+    function(g1, g2) {
+      return (g2['value']) - (g1['value']);
+    }
+  );
+
+  visualize_data(VIS_DATA_ALL, 20);
+
+  $('#customSwitch1').removeAttr('disabled');
+
+  //visualize_data(VIS_DATA_ALL, 0);
 
   $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip();
