@@ -42,15 +42,14 @@
 .vis-row{
   min-height: 10vh;
   width: 100%;
-  display: flex;
-  justify-content: center;
+  /* display: flex;
+  justify-content: center; */
 }
 
 .vis-col{
   width: 100%;
-  min-height: 10vh;
-  display: flex;
-  justify-content: center;
+  /* min-height: 10vh; */
+  /* display: flex; */
 }
 
 .rectangle:hover{

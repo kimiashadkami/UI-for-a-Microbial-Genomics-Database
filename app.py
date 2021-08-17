@@ -49,7 +49,7 @@ def returnJSONResult():
                 query = query.hasa(substring)
 
         def query_to_plot_json(query: SamplesQuery) -> str:
-            summary_df = query.summary_features()
+            summary_df = query.features_summary()
             plot_df = summary_df.reset_index()[['Mutation', 'Count']].rename({
                 'Mutation': 'name',
                 'Count': 'value'
