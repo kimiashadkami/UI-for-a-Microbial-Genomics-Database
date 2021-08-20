@@ -48,6 +48,19 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.query-row{
+  min-height: 10vh;
+  width: 100%;
+}
+
+.main-container .quyer-row .quyer-col{
+  width: 100%;
+  display: flex;
+  justify-content: center;
   margin-top: auto;
   margin-bottom: auto;
 }
@@ -55,6 +68,7 @@
 .vis-row{
   min-height: 10vh;
   width: 100%;
+  margin-top: 0;
   /* display: flex;
   justify-content: center; */
 }

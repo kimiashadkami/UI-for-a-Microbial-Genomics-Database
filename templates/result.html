@@ -27,8 +27,8 @@
       </form>
     </div>
   </div>
-  <div class="row">
-    <div class="col-xl col-lg col-md col-sm col-xs">
+  <div class="row query-row">
+    <div class="col-xl col-lg col-md col-sm col-xs query-col">
       <!-- test -->
       <script type="text/javascript">
         d3.json("{{ url_for('returnJSONResult', query_str = query_str) }}")
@@ -41,6 +41,10 @@
             // Do some error handling.
           });
       </script>
+      <p class="text-break text-center">
+        your query:
+        <b>{{query_str}}</b>
+      </p>
     </div>
   </div>
   <!-- end form -->
