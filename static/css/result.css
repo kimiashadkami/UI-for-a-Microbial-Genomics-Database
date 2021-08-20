@@ -68,15 +68,10 @@
 .vis-row{
   min-height: 10vh;
   width: 100%;
-  margin-top: 0;
-  /* display: flex;
-  justify-content: center; */
 }
 
 .vis-col{
   width: 100%;
-  /* min-height: 10vh; */
-  /* display: flex; */
 }
 
 .rectangle:hover{

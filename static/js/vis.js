@@ -33,7 +33,7 @@ function visualize_data(vis_data, num){
   //creating the bar chart
   svg
     .append('g')
-    .attr('fill', 'royalblue')
+    .attr('fill', '#58A5F0')
     .selectAll('rect')
     .data(VIS_DATA)
     .join('rect')
