@@ -4,14 +4,15 @@
 }
 
 .main-container .form-row{
-  min-height: 90vh;
+  min-height: 50vh;
 }
 
 .main-container .form-row .form-col{
   display: flex;
-  justify-content: center;
+  justify-content: left;
+  margin-left: 3%;
   margin-top: auto;
-  margin-bottom: auto;
+  margin-bottom: 3%;
 }
 
 .mylegend{
@@ -33,4 +34,22 @@
   font-size: 28px;
   background-color: #4CAF50;
   height: 60px;
+}
+
+.main-container .info-row{
+  min-height: 70vh;
+}
+
+.main-container .info-row .info-col{
+  display: flex;
+  justify-content: left;
+  margin-left: 3%;
+  margin-top: 0;
+  margin-bottom: auto;
+}
+
+.info-txt{
+  font-family: Lato;
+  font-size: 140%;
+  color: #000000;
 }
