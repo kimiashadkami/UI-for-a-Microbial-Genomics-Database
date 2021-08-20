@@ -51,15 +51,15 @@ function visualize_data(vis_data, num){
   function xAxis(g){
     g.attr('transform', `translate(0, ${height - margin.bottom})`)
     .call(d3.axisBottom(x_scale).ticks(null, VIS_DATA.format))
-    .attr('font-size', '50%')
+    .attr('font-size', '70%')
     .selectAll('line')
     .attr('y2', '4');
   }
 
   function yAxis(g){
     g.attr('transform', `translate(${margin.left}, 0)`)
-    .call(d3.axisLeft(y_scale).tickFormat(i => VIS_DATA[i].name))
-    .attr('font-size', '50%')
+    .call(d3.axisLeft(y_scale).tickFormat(i => VIS_DATA[i].name.substring(0,10)+"..."))
+    .attr('font-size', '70%')
     .selectAll('line')
     .attr('x2', '-4');
   }

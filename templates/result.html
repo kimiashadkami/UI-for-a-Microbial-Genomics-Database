@@ -27,9 +27,10 @@
       </form>
     </div>
   </div>
+  <!-- end form -->
+  <!-- start info -->
   <div class="row query-row">
     <div class="col-xl col-lg col-md col-sm col-xs query-col">
-      <!-- test -->
       <script type="text/javascript">
         d3.json("{{ url_for('returnJSONResult', query_str = query_str) }}")
           .then(function(data) {
@@ -43,11 +44,14 @@
       </script>
       <p class="text-break text-center">
         your query:
-        <b>{{query_str}}</b>
+        <b>{{query_str}}</b><br><br>
+        x-axis: count of samples in query <br>
+        y-axis: nucleotide variant <br><br>
+        Hover over the bar graphs with your mouse to see more info!
       </p>
     </div>
   </div>
-  <!-- end form -->
+  <!-- end info -->
   <!-- start toggle-->
   <div class="row toggle-row">
     <div class="col toggle-col">
