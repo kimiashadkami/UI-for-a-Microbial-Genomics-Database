@@ -85,7 +85,9 @@ function visualize(data){
     }
   );
 
-  visualize_data(VIS_DATA_ALL, 20);
+  visualize_data(VIS_DATA_ALL, 0);
+
+  //reverse the order
 
   $('#customSwitch1').removeAttr('disabled');
 
